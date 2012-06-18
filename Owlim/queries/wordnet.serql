@@ -1,0 +1,14 @@
+^[The Synsets Of Bank]
+SELECT aSynset FROM 
+		{aSynset} wn20schema:containsWordSense {aWordSense} wn20schema:word {aWord} wn20schema:lexicalForm {"bank"@en-US}
+USING NAMESPACE
+		wn20schema = <http://www.w3.org/2006/03/wn/wn20/schema/>
+		
+^[Hypernyms of Synsets Of Bank]
+SELECT hyperSynset, hypernymLexForm FROM 
+		{aSynset} wn20schema:containsWordSense {aWordSense} wn20schema:word {aWord} wn20schema:lexicalForm {"bank"@en-US},
+		{aSynset} wn20schema:hyponymOf {hyperSynset} wn20schema:containsWordSense {aHypoWordSense} wn20schema:word {aHypoWord} wn20schema:lexicalForm {hypernymLexForm} 
+WHERE 		
+		aSynset != hyperSynset
+USING NAMESPACE
+		wn20schema = <http://www.w3.org/2006/03/wn/wn20/schema/>		

@@ -1,0 +1,4 @@
+# this is an example chunk of text on NT file format to demonstrate how to 
+# parse such RDF data and add it to the repository 
+<http://example.org/owlim#Taraponti> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/owlim#Human> .
+        

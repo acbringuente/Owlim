@@ -1,0 +1,11 @@
+^[All Instance of Restriction-s]
+select X from 
+{X} rdf:type {} rdf:type {<http://www.w3.org/2002/07/owl#Restriction>}
+
+^[Men]
+select X from 
+{X} rdf:type {<http://example.org/owlim#Man>}
+
+^[Women]
+select X from 
+{X} <http://example.org/owlim#hasGender> {<http://example.org/owlim#Female>}

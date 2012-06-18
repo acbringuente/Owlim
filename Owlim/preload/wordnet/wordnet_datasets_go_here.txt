@@ -1,0 +1,2 @@
+To run the wordnet queries put the wordnet datasets here.
+Download and unzip this zip file: http://www.w3.org/2006/03/wn/wn20/download/wn20full.zip

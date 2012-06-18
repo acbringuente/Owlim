@@ -1,0 +1,20 @@
+^[The Synsets Of Bank]
+PREFIX wn20schema: <http://www.w3.org/2006/03/wn/wn20/schema/>
+SELECT ?aSynset WHERE {
+		?aSynset wn20schema:containsWordSense ?aWordSense .
+		?aWordSense wn20schema:word ?aWord .
+		?aWord wn20schema:lexicalForm "bank"@en-US
+}
+	
+^[Hypernyms of Synsets Of Bank]
+PREFIX wn20schema: <http://www.w3.org/2006/03/wn/wn20/schema/>
+SELECT ?hyperSynset ?hypernymLexForm WHERE {
+		?aSynset wn20schema:containsWordSense ?aWordSense .
+		?aWordSense wn20schema:word ?aWord .
+		?aWord wn20schema:lexicalForm "bank"@en-US .
+		?aSynset wn20schema:hyponymOf ?hyperSynset .
+		?hyperSynset wn20schema:containsWordSense ?aHypoWordSense .
+		FILTER (?aSynset != ?hyperSynset) .
+		?aHypoWordSense wn20schema:word ?aHypoWord .
+		?aHypoWord wn20schema:lexicalForm ?hypernymLexForm
+}
